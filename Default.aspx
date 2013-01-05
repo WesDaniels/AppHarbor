@@ -5,7 +5,7 @@
     <div class="container-narrow">
         <hr />
         <div class="jumbotron">
-            <h1>Asp.Net Developer!?</h1>
+            <h1>Asp.Net!?</h1>
         </div>
         <p class="lead">
             Austin Texas present... A unique experience of utilizing various sites and services
