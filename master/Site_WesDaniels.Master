@@ -1,16 +1,16 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="WesDaniels_1.master.cs"
-    Inherits="GitHub.AppHarbor.WesDaniels_1" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site_WesDaniels.master.cs"
+    Inherits="GitHub.AppHarbor.master.Site_WesDaniels" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<head>
     <title>WesDaniels.com - .Net Developer</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Le styles -->
-    <link href="css/wd-navbar.css" rel="stylesheet" media="screen">
-    <link href="css/wd-global.css" rel="stylesheet" media="screen">
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/bootstrap-responsive.css" rel="stylesheet" media="screen">
+    <link href="css/wd-navbar.css" rel="stylesheet" media="screen" />
+    <link href="css/wd-global.css" rel="stylesheet" media="screen" />
+    <link href="css/bootstrap.css" rel="stylesheet" media="screen" />
+    <link href="css/bootstrap-responsive.css" rel="stylesheet" media="screen" />
     <!-- Fav and touch icons -->
     <!--
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
@@ -19,22 +19,6 @@
     <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
     <link rel="shortcut icon" href="../assets/ico/favicon.png">
         -->
-    <asp:ContentPlaceHolder ID="headPlaceHolder" runat="server">
-    </asp:ContentPlaceHolder>
-
-        <script type="text/javascript">
-
-            var _gaq = _gaq || [];
-            _gaq.push(['_setAccount', 'UA-37440715-1']);
-            _gaq.push(['_trackPageview']);
-
-            (function () {
-                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-            })();
-
-    </script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -52,18 +36,17 @@
                     <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
                     <div class="nav-collapse collapse">
                         <ul class="nav">
-                            <li class="active"><a href="#">Home</a></li>
+                            <li class="active"><a href="#" class="siteArticle" id="Default">Home</a></li>
                             <li><a href="#about">About</a></li>
                             <li><a href="#contact">Contact</a></li>
                             <!-- Read about Bootstrap dropdowns at http://twitter.github.com/bootstrap/javascript.html#dropdowns -->
-                            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown
-                                <b class="caret"></b></a>
+                            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">AppHarbor
+                                Tools <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#">Action</a></li>
-                                    <li><a href="#">Another action</a></li>
-                                    <li><a href="#">Something else here</a></li>
+                                    <li class="nav-header">Tutorials</li>
+                                    <li><a href="#" class="siteArticle" id="AppHarborRESTService_Example">Build a REST Services</a></li>
                                     <li class="divider"></li>
-                                    <li class="nav-header">Nav header</li>
+                                    <li class="nav-header">Configuration</li>
                                     <li><a href="#">Separated link</a></li>
                                     <li><a href="#">One more separated link</a></li>
                                 </ul>
@@ -79,16 +62,17 @@
         <!-- /.container -->
     </div>
     <!-- /.navbar-wrapper -->
-    <div>
-        <asp:ContentPlaceHolder ID="bodyPlaceHolder" runat="server">
-        </asp:ContentPlaceHolder>
-    </div>
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/bootstrap-collapse.js"></script>
+    <script src="js/wd_ajax_content.js"></script>
+    <div id="contentText">
+        <asp:ContentPlaceHolder ID="bodyPlaceHolder" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
     </form>
 </body>
 </html>
