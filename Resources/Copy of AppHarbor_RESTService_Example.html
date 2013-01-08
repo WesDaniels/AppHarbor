@@ -1,0 +1,83 @@
+﻿<div class="container-narrow" id="contentText">
+    <script type="text/javascript" src="js/gcp/prettify.js"></script>
+    <link rel="stylesheet" type="text/css" href="js/gcp/prettify.css" />
+    <style>
+    pre {
+    line-height: normal;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    margin: 0px;
+    border: none;
+    }
+  </style>
+  <hr />
+  <div class="jumbotron">
+    <h1>REST in AppHarbor</h1>
+  </div>
+  <p class="lead">
+    To create a simple RESTful WCF (C#) API service in AppHarbor we only need to focus on three files.
+  </p>
+  <hr />
+  <h3>1. Interface</h3>
+
+  <pre class="prettyprint lang-csh">namespace GitHub.AppHarbor.dataservices
+{
+  using System.ServiceModel;
+  using System.ServiceModel.Web;
+
+  [ServiceContract]
+  public interface ISiteArticles
+  {
+    [WebInvoke(Method = "GET",
+            ResponseFormat = WebMessageFormat.Json,
+            BodyStyle = WebMessageBodyStyle.Wrapped,
+            UriTemplate = "App")]
+      string App();
+  }
+}</pre>
+
+  <h3>2. Class</h3>
+
+  <pre class="prettyprint lang-csh">namespace GitHub.AppHarbor.dataservices
+{
+  using System.Resources;
+
+  public class SiteArticles : ISiteArticles
+  {
+    public string App()
+    {
+      return "Harbor!";
+    }
+  }
+}</pre>
+
+  <h3>3. Web.Config</h3>
+
+  <pre class="prettyprint lang-html"><system.serviceModel>&lt;services&gt;
+    &lt;service name=&quot;GitHub.AppHarbor.dataservices.SiteArticles&quot;
+                behaviorConfiguration=&quot;siteArticlesBehavior&quot;&gt;
+        &lt;endpoint address=&quot;&quot;
+                        binding=&quot;webHttpBinding&quot;
+                        contract=&quot;GitHub.AppHarbor.dataservices.ISiteArticles&quot;
+                        behaviorConfiguration=&quot;web&quot; /&gt;
+    &lt;/service&gt;
+&lt;/services&gt;
+&lt;behaviors&gt;
+    &lt;endpointBehaviors&gt;
+        &lt;behavior name=&quot;web&quot;&gt;
+            &lt;webHttp /&gt;
+        &lt;/behavior&gt;
+    &lt;/endpointBehaviors&gt;
+    &lt;serviceBehaviors&gt;
+        &lt;behavior name=&quot;siteArticlesBehavior&quot;&gt;
+            &lt;serviceMetadata httpGetEnabled=&quot;true&quot; httpsGetEnabled=&quot;true&quot; /&gt;
+            &lt;serviceDebug includeExceptionDetailInFaults=&quot;false&quot; /&gt;
+        &lt;/behavior&gt;
+    &lt;/serviceBehaviors&gt;
+&lt;/behaviors&gt;</pre>
+  </body>
+  <script type="text/javascript">
+      prettyPrint();
+  </script>
+</div>

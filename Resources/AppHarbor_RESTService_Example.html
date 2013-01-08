@@ -1,0 +1,26 @@
+﻿<div class="container-narrow" id="contentText">
+    <hr />
+    <div class="jumbotron">
+        <h1>REST in AppHarbor</h1>
+    </div>
+    <p class="lead">
+        To create a simple RESTful WCF (C#) API service in AppHarbor we only need to focus
+        on three files.
+    </p>
+    <hr />
+    <p>Add an "WCF Service" file to the project, creating two files with a .svc extension.
+    </p>
+    <h3>1. The Interface (IService1.svc)</h3>
+    <p>Attributes need to be added, [ServiceContract] to the interface and [WebInvoke] to
+        the operation.</p>
+    <pre id="NNxdGUW3" class="prettyprint lang-csh"></pre>
+    <h3>2. Service (Service1.svc)</h3>
+    <pre id="5ZGeY9Za" class="prettyprint lang-csh"></pre>
+    <h3>3. Web.Config</h3>
+    <pre id="06h1Fpha" class="prettyprint lang-html"></pre>
+    <script type="text/javascript">
+        $("pre").each(function (index) {
+            getPastebin(this.id);
+        });
+    </script>
+</div>
