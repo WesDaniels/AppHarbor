@@ -8,6 +8,21 @@ body {
     line-height: 20px;
 }
 
+pre {
+    line-height: normal;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    margin: 0px 0px 0px 0px;
+    border: none;
+}
+
+.api-talk {
+    margin-top: -20px;
+    float: right;
+    font-size: x-small;    
+}
+
 .container-narrow {
     margin: 0 auto;
     max-width: 700px;
@@ -33,7 +48,9 @@ body {
     }
 }
 
-.row-fluid [class*="span"] a,a:hover {
-  color: #5a5a5a;
-  text-decoration: none;
+.row-fluid [class*="span"] a, a:hover {
+    color: #5a5a5a;
+    text-decoration: none;
 }
+
+
