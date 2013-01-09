@@ -1,1 +1,0 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="GitHub.AppHarbor.dataservices.pastebin.PastebinProxy" CodeBehind="PastebinProxy.svc.cs" %>

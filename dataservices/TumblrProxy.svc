@@ -1,1 +1,0 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="GitHub.AppHarbor.dataservices.TumblrProxy" CodeBehind="TumblrProxy.svc.cs" %>
